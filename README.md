@@ -22,12 +22,44 @@ and paste
 ```
 `ctrl-o + ctrl+x`
 
-Now you can now reboot the Pi, or start the Docker daemon with:
+Now you can reboot the Pi and start the Docker daemon with:
 
 ```$ sudo systemctl start docker```
 
 ### Enable Docker client
 The Docker client can only be used by root or members of the docker group.
+
 ```$ sudo usermod -aG docker pi```
 
 After making this change, log out and reconnect with `ssh`.
+
+`$ docker info`
+
+```
+Containers: x
+ Running: x
+ Paused: x
+ Stopped: x
+Images: x
+Server Version: 18.04.0-ce
+Storage Driver: devicemapper
+```
+Make sure storage driver is `devicemapper`.
+
+# Docker for Greengrass
+Clone the repo. You can find the link above.
+
+### Build Greengras image
+```
+$ cd aws-greengrass-docker-raspberry-pi
+$ docker build -t aws-greengrass .
+```
+
+### Run AWS Greengrass continer
+
+1. Make sure you have placed the certificates in `certs/` directory.
+2. Update the `config.json` in `config/`.
+3. Run the container
+   ```
+   docker run --rm -it -v "$PWD/certs":/greengrass/certs -v $PWD/config:/greengrass/config --privileged aws-greengrass
+   ```
