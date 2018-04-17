@@ -8,9 +8,12 @@ Make sure Raspberry Pi is up and running.
 ```$ curl -sSL https://get.docker.com | sh```
 
 # Configure Docker
-There are a few manual steps needed in order to make greengrass working. We need to change the docker storage driver to 'devicemapper'. Read more about it [here](https://forums.aws.amazon.com/message.jspa?messageID=832291)
-```$ sudo systemctl enable docker
-$ sudo nano /etc/docker/daemon.json```
+There are a few manual steps needed in order to make greengrass working. We need to change the docker storage driver to 'devicemapper'. Read more about it [here](https://forums.aws.amazon.com/message.jspa?messageID=832291).
+
+```
+$ sudo systemctl enable docker
+$ sudo nano /etc/docker/daemon.json
+```
 and paste
 ```
 {
