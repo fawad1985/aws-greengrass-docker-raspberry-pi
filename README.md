@@ -49,7 +49,7 @@ Make sure storage driver is `devicemapper`.
 # Docker for Greengrass
 Clone the repo. You can find the link above.
 
-### Build Greengras image
+### Build Greengrass image
 ```
 $ cd aws-greengrass-docker-raspberry-pi
 $ docker build -t aws-greengrass .
