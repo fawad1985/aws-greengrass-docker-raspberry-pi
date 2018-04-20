@@ -4,7 +4,7 @@ RUN adduser --system ggc_user \
     && groupadd --system ggc_group
 
 RUN apt-get update \
-    && apt-get install -y sqlite3 python2.7 binutils \
+    && apt-get install -y sqlite3 \
     && echo 'fs.protected_symlinks = 1' >> /etc/sysctl.d/98-rpi.conf \
     && echo 'fs.protected_hardlinks = 1' >> /etc/sysctl.d/98-rpi.conf
 

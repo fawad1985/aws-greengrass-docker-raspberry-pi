@@ -1,0 +1,17 @@
+version '2'
+
+services:
+  greengrass:
+    build: .
+    container_name: greengrass
+    hostname: greengrass
+    volumes:
+      - ./certs:/greengrass/certs
+      - ./config:/greengrass/config
+    ports:
+      - "8883:8883"
+    environment:
+      -QPKG=armv7l
+    network_mode: "host"
+    previledged: true
+    
