@@ -1,4 +1,4 @@
-version '2'
+version: '2'
 
 services:
   greengrass:
@@ -11,7 +11,7 @@ services:
     ports:
       - "8883:8883"
     environment:
-      -QPKG=armv7l
+      - QPKG=armv7l
     network_mode: "host"
-    previledged: true
-    
+    privileged: true
+
