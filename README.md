@@ -47,23 +47,21 @@ Storage Driver: devicemapper
 Make sure storage driver is `devicemapper`.
 
 # Docker for Greengrass
-Clone the repo. You can find the link above.
+1. Clone the repo. You can find the link above.
+2. Make sure you have placed the certificates in `certs/` directory.
+3. Update the `config.json` in `config/`.
 
-### Build Greengrass image
+### Using docker command 
 ```
 $ cd aws-greengrass-docker-raspberry-pi
 $ docker build -t aws-greengrass .
+$ docker run -it -v "$PWD/certs":/greengrass/certs -v $PWD/config:/greengrass/config --privileged aws-greengrass
 ```
 
-### Run AWS Greengrass container
-
-1. Make sure you have placed the certificates in `certs/` directory.
-2. Update the `config.json` in `config/`.
-3. Run the container
-   ```
-   docker run -it -v "$PWD/certs":/greengrass/certs -v $PWD/config:/greengrass/config --privileged aws-greengrass
-   ```
-
+### Using docker-compose command 
+```
+$ docker-compose up
+```
 
 # Note
 The `start.sh` file runs whenever you start the container. You can choose to update it, based on your need. Also, when we change the Docker storage driver you won't see the images and containers created with the old storage driver, until you change it back. [Read this](https://docs.docker.com/storage/storagedriver/)
