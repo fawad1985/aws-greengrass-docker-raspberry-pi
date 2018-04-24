@@ -1,2 +1,2 @@
-Make sure you go through this handy AWS guid https://docs.aws.amazon.com/greengrass/latest/developerguide/gg-config.html and download Greengrass Core software based on your OS architecture.
+Make sure you go through this handy AWS [guide](https://docs.aws.amazon.com/greengrass/latest/developerguide/gg-config.html) and download Greengrass Core software based on your OS architecture.
 In our case, we have downloaded `Raspbian Jessie` distribution based on our `armv7l` architecture.
