@@ -14,6 +14,4 @@ EXPOSE 8883
 
 COPY start.sh /
 
-CMD "/bin/bash"
-CMD /greengrass/ggc/core/greengrassd start
 ENTRYPOINT ["/start.sh"]
